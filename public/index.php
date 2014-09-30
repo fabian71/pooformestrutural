@@ -34,15 +34,9 @@ $campo->setType('text')
 	  ->setId('nome')
 	  ->setPlaceholder('seu nome');
 
-// Testando 
+// Apicando fildSet 
 $decorator = new \FABIANO\Form\DecoratorFildset($campo);
-
 $form->createField($decorator);
-
-exit;
-
-
-
 
 
 $campoLabel = new \FABIANO\Form\LabelFactory();
@@ -51,12 +45,15 @@ $campo->setLabel('Email')
 	  ->setStyle('display:block');
 $form->createField($campo);
 
+
 $campoEmail = new \FABIANO\Form\InputTextFactory();
 $campo = $campoEmail->newField();
 $campo->setType('text')
 	  ->setId('email')
 	  ->setPlaceholder('seu email');
-$form->createField($campo);
+// Apicando fildSet 
+$decorator = new \FABIANO\Form\DecoratorFildset($campo);
+$form->createField($decorator);
 
 $campoLabel = new \FABIANO\Form\LabelFactory();
 $campo = $campoLabel->newField();
@@ -70,7 +67,9 @@ $campo->setId('estado')
 	  ->setOption(array("pr" => "Parana", "sc" => "Santa Catarina", "sp" => "Sao Paulo"))
 	  ->setSelected('sp')
 	  ->setName('Estados');
-$form->createField($campo);	  
+// Apicando fildSet 
+$decorator = new \FABIANO\Form\DecoratorFildset($campo);
+$form->createField($decorator); 
 
 $campoSubmit = new \FABIANO\Form\SubmitFactory();
 $campo = $campoSubmit->newField();
